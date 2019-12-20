@@ -17,7 +17,7 @@ function getHoroscope($inputDate) {
     $keys = array_keys($horoscope);
 
     $inputDateMnth = (int)substr($inputDate,0,2);
-    $inputDateD = (int)substr($inputDate,2,5);
+    $inputDateD = (int)substr($inputDate,2,4);
 
     for ($i = 0; $i < count($keys); $i++) {
         $key = $keys[$i];
@@ -30,16 +30,9 @@ function getHoroscope($inputDate) {
         $toMonth = (int)$arr[2];
         $toDate = (int)$arr[3];
             
-         if($fromMonth >= $inputDateMnth){
-            if($fromDate >= $inputDateD){              
-                return $key;
-            }
-         } 
-         if($toMonth <= $inputDateMnth){
-             if($toDate <= $inputDateD){               
-                return $key;
-            }
-        }  
-        
-    }     
+        if($fromMonth === $inputDateMnth && $fromDate <= $inputDateD ||  $toMonth === $inputDateMnth && $toDate >= $inputDateD){
+            return $key;
+        }
+    }
+         
 }

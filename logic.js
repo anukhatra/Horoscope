@@ -10,31 +10,25 @@ function update() {
     
     makeRequest(url, method, formData, function(result) {
         
-        console.log(result)
         if(result == true){       
-           get();
-            
-           }else{
-            console.log("FALSE");
-           }
+            get();
+        }
+        console.log(result)
     })
 }
 
 function add() {    
     var dateEnter =  document.getElementById("type").value;
-
     let url = "./server/addHoroscope.php"
     let method = "POST"    
     let formData = new FormData()
     formData.set("date", dateEnter)
     
-    makeRequest(url, method, formData, function(result) {
-        console.log(result);
+    makeRequest(url, method, formData, function(result) {      
         if(result == true){           
             get();
-        }else{
-            console.log("FALSE");
-           }
+        }  
+         console.log(result)
     })
 }
 
@@ -43,7 +37,6 @@ function get(){
     let method = "GET";
 
     makeRequest(url, method, undefined, function(result){
-      
         document.getElementById("output").innerText = result;
     });
    
