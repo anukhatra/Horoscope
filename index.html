@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Horoscope</title>
+    <script src="./logic.js"></script>
+    <title>HOROSCOPE</title>
+  <style>
+     #form{
+        width: 300px;
+        padding: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background:#487eb0 ;
+        text-align: center;
+        border-radius: 15px;
+        
+    }
+    h1{
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: darkkhaki;
+    }
+    #addHoroscope,#deleteHoroscope,#updateHoroscope{
+        border-radius: 5px;
+        background-color: gray;
+        border: none;
+        color: white;
+        padding: 5px 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+     
+    } 
+    #output{
+        padding: 40px;
+        text-align: center;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+   </style> 
 </head>
-<body>
-    <?php require "header.html" ?>
 
-   
+<body>
+    <h1>HOROSCOPE</h1>
+
+    <div id="form">
+        <input type="text" id="type" maxlength="4" placeholder="MMDD">
+        <button id="addHoroscope"  onclick="add()">Spara mitt horoskop</button>
+        <button id="updateHoroscope" onclick="update()">Uppdatera mitt horoskop</button>
+        <button id="deleteHoroscope" onclick="del()">Radera mitt horoskop</button>
+    </div>
+    <div id="output">
+
+    </div>
 </body>
+
 </html>
